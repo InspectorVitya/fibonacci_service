@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: fib-app
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8082:8082"
+    restart: unless-stopped
+    depends_on:
+      - redis
+    environment:
+      REDIS_URL: redis:6379
+    networks:
+      - backend
+  redis:
+    container_name: redis-fib
+    image: "redis:alpine"
+    restart: unless-stopped
+    networks:
+      - backend
+
+networks:
+  backend:    
