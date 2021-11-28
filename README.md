@@ -11,6 +11,7 @@ go run cmd/main.go
 ### Развертывание c помощью докера
 ```
 git clone https://github.com/InspectorVitya/fibonacci_service.git
+cd fibonacci_service
 docker-compose up -d
 ```
 ### Тестирование
