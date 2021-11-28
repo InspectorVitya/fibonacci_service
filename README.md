@@ -1,24 +1,28 @@
 # Фибоначчи
 ### Развертывание
+```
 git clone https://github.com/InspectorVitya/fibonacci_service.git
 cd fibonacci_service
 go mod tidy
 go run cmd/main.go
+```
 Можно конфигурировать приложение через переменыне окружение
-PORT_HTTP=9090 PORT_GRPC= 9392 go run cmd/main.go
+```PORT_HTTP=9090 PORT_GRPC= 9392 go run cmd/main.go```
 ### Развертывание c помощью докера
+```
 git clone https://github.com/InspectorVitya/fibonacci_service.git
 docker-compose up -d
+```
 ### Тестирование
 Запуск Unit-тестов
 
-go test -v ./...
+```go test -v ./...```
 
 ### Описание работы
 В приложении есть единственный эндпоинт - `/fibonacci`. Стандартно поднимается на http://localhost:8080/.
 
 Для HTTP передавать данные следует в виде GET запроса и с параметрами запроса x и y
-Пример: localhost:8080/fibonacci?x=10&y=100
+Пример: `localhost:8080/fibonacci?x=10&y=100`
 
 GRPC сервер стардартно поднимается на 8082. Можно проверить с помощью утилиты
 evans["https://github.com/ktr0731/evans"].(`evans api/fibanacii.proto -p 8082`)
