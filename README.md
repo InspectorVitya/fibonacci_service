@@ -1,5 +1,6 @@
 # Фибоначчи
 ### Развертывание
+На компьютере должен быть установлен Golang и redis.
 ```
 git clone https://github.com/InspectorVitya/fibonacci_service.git
 cd fibonacci_service
